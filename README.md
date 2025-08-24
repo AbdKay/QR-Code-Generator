@@ -19,6 +19,7 @@ Font Awesome icons are integrated for an enhanced user experience.
 ---
 
 ## 🌍 Live Demo
+https://abdkay.github.io/QR-Code-Generator/
 
 ---
 
@@ -32,21 +33,20 @@ Font Awesome icons are integrated for an enhanced user experience.
 
 ---
 
+---
+
 ## ▶️ Getting Started
-
 1. Clone this repository:
-
    ```bash
-
+   git clone https://github.com/your-username/qr-code-generator.git
    ```
-
-git clone https://github.com/your-username/qr-code-generator.git
-
-```
 2. Navigate to the project folder:
-cd qr-code-generator
-3. Open index.html in your browser.
-```
+   ```bash
+   cd qr-code-generator
+   ```
+3. Open `index.html` in your browser.
+
+---
 
 📸 Screenshots
 ![Main UI](screenshots/Screenshot%202025-08-24%20204405.png)
