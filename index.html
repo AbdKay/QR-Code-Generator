@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QR Code Generator</title>
+
+    <!-- Font Awesome (icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- QRCode.js (tiny dependency-free QR generator) -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+      defer
+    ></script>
+    <!-- App Script -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <header class="title">
+        <i class="fa-solid fa-qrcode"></i>
+        <h1>QR Code Generator</h1>
+      </header>
+
+      <section class="controls">
+        <label for="qr-text" class="sr-only">Text or URL</label>
+        <div class="input-row">
+          <input
+            id="qr-text"
+            type="text"
+            placeholder="Type text or paste a URL (e.g., https://example.com)"
+            autocomplete="off"
+          />
+          <button id="copy-btn" class="icon-btn" title="Copy input">
+            <i class="fa-solid fa-copy"></i>
+          </button>
+        </div>
+
+        <div class="options-row">
+          <label for="qr-size">
+            <i class="fa-solid fa-maximize"></i> Size
+          </label>
+          <select id="qr-size">
+            <option value="128">128 px</option>
+            <option value="192">192 px</option>
+            <option value="256" selected>256 px</option>
+            <option value="320">320 px</option>
+          </select>
+
+          <label for="qr-ecc">
+            <i class="fa-solid fa-shield-halved"></i> ECC
+          </label>
+          <select id="qr-ecc" title="Error Correction Level">
+            <option value="L">L (Low)</option>
+            <option value="M" selected>M (Medium)</option>
+            <option value="Q">Q (Quartile)</option>
+            <option value="H">H (High)</option>
+          </select>
+        </div>
+
+        <div class="buttons-row">
+          <button id="generate-btn" class="primary">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            Generate
+          </button>
+          <button id="clear-btn" class="secondary">
+            <i class="fa-solid fa-eraser"></i>
+            Clear
+          </button>
+          <button id="download-btn" class="ghost" disabled>
+            <i class="fa-solid fa-download"></i>
+            Download
+          </button>
+        </div>
+        <p id="hint" class="hint">Press <kbd>Enter</kbd> to generate.</p>
+      </section>
+
+      <section class="preview">
+        <div id="qr-box" class="qr-box" aria-live="polite"></div>
+      </section>
+
+      <footer class="footer">
+        <span>
+          <i class="fa-solid fa-circle-info"></i>
+          Works fully offline in your browser.
+        </span>
+      </footer>
+    </main>
+
+    <!-- for screen-readers only -->
+    <span
+      class="sr-only"
+      id="copied-toast"
+      role="status"
+      aria-live="polite"
+    ></span>
+  </body>
+</html>
